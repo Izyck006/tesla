@@ -8,6 +8,9 @@ const mongoSanitize = require('express-mongo-sanitize');
 
 const app = express();
 
+app.use(cors());
+app.use(express.json());
+
 // Security Headers
 app.use(helmet());
 
@@ -19,11 +22,8 @@ const limiter = rateLimit({
 });
 app.use('/api/', limiter);
 
-// Prevent NoSQL Injection
-app.use(mongoSanitize());
-
-app.use(cors());
-app.use(express.json());
+// Prevent NoSQL Injection (Handled by Mongoose schema casting by default)
+// app.use(mongoSanitize());
 
 mongoose.connect(process.env.MONGO_URI)
 .then(() => console.log('✅ Connected to MongoDB Atlas'))
