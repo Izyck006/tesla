@@ -1,0 +1,378 @@
+.vehicle-card {
+  background-color: #0a0a0a;
+  border: 1px solid #222;
+  border-radius: 4px;
+  padding: 1.5rem;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-badges {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.badge {
+  font-size: 0.65rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 2px;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.badge.available {
+  background-color: rgba(0, 255, 0, 0.05);
+  color: #00ff00;
+  border: 1px solid rgba(0, 255, 0, 0.15);
+}
+.badge.limited-stock {
+  background-color: rgba(255, 215, 0, 0.05);
+  color: #ffd700;
+  border: 1px solid rgba(255, 215, 0, 0.15);
+}
+.badge.pre-order {
+  background-color: rgba(255, 51, 51, 0.05);
+  color: #ff3333;
+  border: 1px solid rgba(255, 51, 51, 0.15);
+}
+.badge.preowned {
+  background-color: rgba(51, 136, 255, 0.05);
+  color: #3388ff;
+  border: 1px solid rgba(51, 136, 255, 0.15);
+}
+
+.badge.year {
+  border: 1px solid #333;
+  color: #888;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.badge.available .dot { background-color: #00ff00; }
+.badge.limited-stock .dot { background-color: #ffd700; }
+.badge.pre-order .dot { background-color: #ff3333; }
+.badge.preowned .dot { background-color: #3388ff; }
+
+.card-image-container {
+  width: 100%;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  background: transparent;
+  perspective: 1000px;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  transition: filter 0.3s ease, transform 0.5s ease;
+  animation: float 6s ease-in-out infinite;
+  transform-style: preserve-3d;
+  z-index: 2;
+}
+
+.card-image:hover {
+  transform: scale(1.2) rotateY(10deg);
+}
+
+@keyframes float {
+  0% { transform: scale(1.15) translateY(0px) rotateY(0deg); }
+  50% { transform: scale(1.15) translateY(-8px) rotateY(5deg); }
+  100% { transform: scale(1.15) translateY(0px) rotateY(0deg); }
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.25rem;
+}
+
+.card-header h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.price {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.card-subtitle {
+  color: #888;
+  font-size: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.card-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #222;
+  padding-bottom: 1rem;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.stat-label {
+  color: #888;
+  font-size: 0.65rem;
+  letter-spacing: 1px;
+}
+
+.stat-value {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.card-colors {
+  margin-bottom: 1.5rem;
+}
+
+.color-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-size: 0.75rem;
+}
+
+.color-label {
+  color: #888;
+  letter-spacing: 1px;
+}
+
+.color-name {
+  font-weight: 500;
+}
+
+.color-options {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.color-circle-wrapper {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.color-circle-wrapper.active {
+  border-color: #fff;
+}
+
+.color-circle {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+}
+
+.card-pricing {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.pricing-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.pricing-col.align-right {
+  align-items: flex-end;
+}
+
+.pricing-label {
+  color: #888;
+  font-size: 0.75rem;
+}
+
+.pricing-value {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.card-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+
+.btn-card {
+  flex: 1;
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  color: #fff;
+  padding: 0.75rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-card:hover {
+  background-color: #2a2a2a;
+}
+
+/* Gallery Modal */
+.gallery-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery-modal {
+  width: 90%;
+  max-width: 1000px;
+  background-color: #050505;
+  border: 1px solid #222;
+  border-radius: 4px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(25, 25, 25, 0.8);
+  border: 1px solid #333;
+  color: #fff;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.gallery-main {
+  position: relative;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #111;
+}
+
+.g-image {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+  transition: transform 0.5s ease;
+}
+
+.g-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(25, 25, 25, 0.8);
+  border: 1px solid #333;
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.g-arrow.left { left: 1rem; }
+.g-arrow.right { right: 1rem; }
+
+.g-view-label {
+  position: absolute;
+  bottom: 1rem;
+  background: rgba(0,0,0,0.5);
+  border: 1px solid #333;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.65rem;
+  letter-spacing: 1px;
+}
+
+.gallery-footer {
+  padding: 2rem;
+}
+
+.g-footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 1.5rem;
+}
+
+.g-titles h2 { margin: 0 0 0.25rem 0; font-size: 1.5rem; }
+.g-titles p { margin: 0; color: #888; font-size: 0.8rem; }
+.g-year { color: #888; font-size: 0.8rem; }
+
+.g-thumbnails {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.g-thumb {
+  flex: 1;
+  height: 60px;
+  background-color: #0a0a0a;
+  border: 1px solid #222;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.g-thumb.active {
+  opacity: 1;
+  border-color: #e31937;
+}
+
+.g-thumb img {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+}
+
+.g-color-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}

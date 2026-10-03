@@ -1,0 +1,43 @@
+.vehicle-section {
+  background-color: #000;
+  min-height: 100vh;
+  padding: 6rem 3rem 3rem 3rem;
+  color: #fff;
+  scroll-snap-align: start;
+}
+
+.vehicle-section-header {
+  margin-bottom: 3rem;
+}
+
+.vehicle-section-header h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.vehicle-section-header p {
+  color: #888;
+  font-size: 1rem;
+}
+
+.vehicle-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 1024px) {
+  .vehicle-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .vehicle-grid {
+    grid-template-columns: 1fr;
+  }
+  .vehicle-section {
+    padding: 6rem 1.5rem 2rem 1.5rem;
+  }
+}

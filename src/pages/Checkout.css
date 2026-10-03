@@ -1,0 +1,512 @@
+.checkout-page {
+  background-color: #000;
+  color: #fff;
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.checkout-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #222;
+}
+
+.header-logo {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+  cursor: pointer;
+  color: #e31937;
+}
+
+.header-links {
+  display: flex;
+  gap: 2rem;
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+.header-links span {
+  cursor: pointer;
+}
+
+.header-links span:hover {
+  color: #fff;
+}
+
+.header-btn {
+  background-color: #fff;
+  color: #000;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.checkout-nav {
+  padding: 2rem 4rem;
+  color: #888;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.checkout-nav:hover {
+  color: #fff;
+}
+
+.checkout-container {
+  display: flex;
+  padding: 0 4rem;
+  gap: 4rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.checkout-main {
+  flex: 1;
+}
+
+.checkout-steps {
+  display: flex;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.step-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #555;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.step-indicator.active {
+  color: #fff;
+}
+
+.step-circle {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #222;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #555;
+  font-size: 0.75rem;
+}
+
+.step-indicator.active .step-circle {
+  background-color: #e31937;
+  color: #fff;
+}
+
+.step-indicator.completed .step-circle {
+  background-color: #e31937;
+  color: #fff;
+}
+
+.step-line {
+  flex: 1;
+  height: 1px;
+  background-color: #222;
+  margin: 0 1rem;
+}
+
+.step-line.active {
+  background-color: #e31937;
+}
+
+.checkout-content {
+  background-color: #0a0a0a;
+  border: 1px solid #222;
+  border-radius: 4px;
+  padding: 3rem;
+  min-height: 400px;
+}
+
+.checkout-content h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: #888;
+  font-size: 0.8rem;
+  margin-bottom: 2rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.form-row {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.form-group label {
+  color: #888;
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input {
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  color: #fff;
+  padding: 1rem;
+  border-radius: 2px;
+  font-size: 0.9rem;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #555;
+}
+
+.form-group input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background-color: #e31937;
+  color: #fff;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: #cc1631;
+}
+
+.btn-primary:disabled {
+  background-color: #333;
+  color: #666;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  text-decoration: underline;
+}
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.checkout-sidebar {
+  width: 350px;
+}
+
+.order-summary-box {
+  background-color: #0a0a0a;
+  border: 1px solid #222;
+  border-radius: 4px;
+  padding: 2rem;
+}
+
+.summary-title {
+  color: #888;
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  margin-bottom: 2rem;
+}
+
+.summary-image-container {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.summary-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.summary-details {
+  margin-top: 2rem;
+  border-top: 1px solid #222;
+  padding-top: 1rem;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+  color: #aaa;
+}
+
+.summary-row span:last-child {
+  color: #fff;
+  font-weight: 500;
+}
+
+.summary-row.highlight span {
+  color: #e31937;
+}
+
+/* Payment Step Styles */
+.payment-options {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.payment-card {
+  flex: 1;
+  border: 1px solid #333;
+  border-radius: 4px;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.payment-card:hover {
+  border-color: #555;
+}
+
+.payment-card.active {
+  border-color: #e31937;
+  background-color: rgba(227, 25, 55, 0.05);
+}
+
+.payment-card .icon {
+  font-size: 1.5rem;
+  color: #e31937;
+  margin-bottom: 1rem;
+}
+
+.payment-card h4 {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+.payment-card p {
+  margin: 0;
+  font-size: 0.7rem;
+  color: #888;
+}
+
+.crypto-section {
+  background-color: #111;
+  border: 1px solid #222;
+  padding: 1.5rem;
+  border-radius: 4px;
+  margin-bottom: 2rem;
+}
+
+.crypto-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.crypto-tab {
+  padding: 0.5rem 1rem;
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 2px;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.crypto-tab.active {
+  background-color: #e31937;
+  border-color: #e31937;
+}
+
+.crypto-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.crypto-info label {
+  color: #888;
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.crypto-info h3 {
+  font-size: 1.5rem;
+  margin: 0 0 1.5rem 0;
+}
+
+.wallet-address {
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  padding: 0.75rem 1rem;
+  border-radius: 2px;
+  font-family: monospace;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.copy-icon {
+  color: #e31937;
+  cursor: pointer;
+}
+
+.qr-code {
+  background-color: #fff;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+.receipt-upload {
+  border: 1px dashed #00ff00;
+  color: #00ff00;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  border-radius: 4px;
+  background-color: rgba(0, 255, 0, 0.05);
+}
+
+/* Agreement Step */
+.agreement-box {
+  background-color: #111;
+  border: 1px solid #222;
+  padding: 2rem;
+  border-radius: 4px;
+  margin-bottom: 2rem;
+}
+
+.agreement-box ol {
+  margin: 0;
+  padding-left: 1.5rem;
+  color: #aaa;
+  font-size: 0.85rem;
+  line-height: 1.8;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  margin-bottom: 2rem;
+}
+
+.checkbox-label input {
+  width: 16px;
+  height: 16px;
+}
+
+/* Confirmed */
+.confirmed-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.success-icon {
+  width: 80px;
+  height: 80px;
+  background-color: #e31937;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Animations */
+.fade-in {
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 1024px) {
+  .checkout-container {
+    flex-direction: column-reverse;
+    padding: 0 2rem;
+    gap: 2rem;
+  }
+  .checkout-sidebar {
+    width: 100%;
+  }
+  .checkout-nav {
+    padding: 1rem 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .checkout-nav {
+    padding: 1rem;
+  }
+  .checkout-container {
+    padding: 0 1rem;
+  }
+  .checkout-content {
+    padding: 1.5rem;
+  }
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+  .payment-options {
+    flex-direction: column;
+  }
+  .checkout-steps {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .step-line {
+    display: none;
+  }
+  .header-links {
+    display: none;
+  }
+}
