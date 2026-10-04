@@ -28,18 +28,19 @@ app.use('/api/', limiter);
 // Serverless MongoDB Connection Middleware
 const connectDB = async () => {
   if (mongoose.connection.readyState >= 1) return;
-  try {
-    mongoose.set('strictQuery', false);
-    await mongoose.connect(process.env.MONGO_URI);
-    console.log('✅ Connected to MongoDB Atlas');
-  } catch (err) {
-    console.error('❌ MongoDB Connection Error:', err);
-  }
+  mongoose.set('strictQuery', false);
+  await mongoose.connect(process.env.MONGO_URI);
+  console.log('✅ Connected to MongoDB Atlas');
 };
 
 app.use(async (req, res, next) => {
-  await connectDB();
-  next();
+  try {
+    await connectDB();
+    next();
+  } catch (err) {
+    console.error('❌ MongoDB Connection Error:', err.message);
+    res.status(500).json({ message: 'Database connection failed', error: err.message });
+  }
 });
 
 // Basic Health Check Route
