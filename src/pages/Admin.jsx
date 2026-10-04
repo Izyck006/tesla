@@ -23,7 +23,7 @@ const Admin = () => {
   const handleUpdate = async (id) => {
     if (!newPrice) return;
     try {
-      const res = await fetch(`http://localhost:5000/api/vehicles/${id}`, {
+      const res = await fetch(`/api/vehicles/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
