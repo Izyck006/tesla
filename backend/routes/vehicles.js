@@ -28,7 +28,8 @@ router.get('/', async (req, res) => {
     const vehicles = await Vehicle.find();
     res.json(vehicles);
   } catch (error) {
-    res.status(500).json({ message: 'Server error' });
+    console.error('Error fetching vehicles:', error);
+    res.status(500).json({ message: 'Server error', error: error.message });
   }
 });
 

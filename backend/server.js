@@ -25,9 +25,22 @@ app.use('/api/', limiter);
 // Prevent NoSQL Injection (Handled by Mongoose schema casting by default)
 // app.use(mongoSanitize());
 
-mongoose.connect(process.env.MONGO_URI)
-.then(() => console.log('✅ Connected to MongoDB Atlas'))
-.catch(err => console.error('❌ MongoDB Connection Error:', err));
+// Serverless MongoDB Connection Middleware
+const connectDB = async () => {
+  if (mongoose.connection.readyState >= 1) return;
+  try {
+    mongoose.set('strictQuery', false);
+    await mongoose.connect(process.env.MONGO_URI);
+    console.log('✅ Connected to MongoDB Atlas');
+  } catch (err) {
+    console.error('❌ MongoDB Connection Error:', err);
+  }
+};
+
+app.use(async (req, res, next) => {
+  await connectDB();
+  next();
+});
 
 // Basic Health Check Route
 app.get('/api/health', (req, res) => {
