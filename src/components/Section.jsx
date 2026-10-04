@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const Section = ({ title, description, backgroundImg, primaryButton, secondaryButton, textColor = 'dark' }) => {
+const Section = ({ title, description, backgroundImg, primaryButton, secondaryButton, textColor = 'dark', onPrimaryClick }) => {
   return (
     <section 
       className="section" 
@@ -25,7 +25,7 @@ const Section = ({ title, description, backgroundImg, primaryButton, secondaryBu
         viewport={{ once: false }}
         transition={{ duration: 0.8, delay: 0.2 }}
       >
-        <button className="btn btn-primary">{primaryButton || 'Order Now'}</button>
+        <button className="btn btn-primary" onClick={onPrimaryClick}>{primaryButton || 'Order Now'}</button>
         {secondaryButton && (
           <button className="btn btn-secondary">{secondaryButton}</button>
         )}

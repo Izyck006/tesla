@@ -3,8 +3,21 @@ import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Section from '../components/Section';
 import VehicleGrid from '../components/VehicleGrid';
+import { useAuth } from '../context/AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
+  const { user } = useAuth();
+  const navigate = useNavigate();
+
+  const handleOrderClick = () => {
+    if (user) {
+      document.getElementById('vehicles')?.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      navigate('/auth');
+    }
+  };
+
   return (
     <div className="App">
       <Navbar />
@@ -15,6 +28,7 @@ const Home = () => {
           backgroundImg="/hero_car.png"
           primaryButton="Order Now"
           textColor="light"
+          onPrimaryClick={handleOrderClick}
         />
         
         <VehicleGrid />
